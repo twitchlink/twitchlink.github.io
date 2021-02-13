@@ -1,3 +1,2 @@
 User-agent: *
 Allow:/
-Sitemap: https://twitchlink.github.io/sitemap.txt
