@@ -1,9 +1,0 @@
-https://twitchlink.github.io/
-https://twitchlink.github.io/?/download
-https://twitchlink.github.io/?/donate
-https://twitchlink.github.io/?lang=en
-https://twitchlink.github.io/?/download?lang=en
-https://twitchlink.github.io/?/donate?lang=en
-https://twitchlink.github.io/?lang=ko
-https://twitchlink.github.io/?/download?lang=ko
-https://twitchlink.github.io/?/donate?lang=ko
