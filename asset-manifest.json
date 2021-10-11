@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.9c0cbcf2.chunk.css",
+    "main.css": "/static/css/main.50ae65b8.chunk.css",
     "main.js": "/static/js/main.467c47ae.chunk.js",
     "main.js.map": "/static/js/main.467c47ae.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2275dde1.js",
@@ -28,7 +28,7 @@
     "static/css/4.3e9d8641.chunk.css.map": "/static/css/4.3e9d8641.chunk.css.map",
     "static/css/5.f569c9b0.chunk.css.map": "/static/css/5.f569c9b0.chunk.css.map",
     "static/css/6.0fcb3d69.chunk.css.map": "/static/css/6.0fcb3d69.chunk.css.map",
-    "static/css/main.9c0cbcf2.chunk.css.map": "/static/css/main.9c0cbcf2.chunk.css.map",
+    "static/css/main.50ae65b8.chunk.css.map": "/static/css/main.50ae65b8.chunk.css.map",
     "static/js/2.8211c110.chunk.js.LICENSE.txt": "/static/js/2.8211c110.chunk.js.LICENSE.txt",
     "static/media/channel_en.7b392351.png": "/static/media/channel_en.7b392351.png",
     "static/media/channel_ko.1820afd7.png": "/static/media/channel_ko.1820afd7.png",
@@ -54,7 +54,7 @@
     "static/js/runtime-main.2275dde1.js",
     "static/css/2.31ff0196.chunk.css",
     "static/js/2.8211c110.chunk.js",
-    "static/css/main.9c0cbcf2.chunk.css",
+    "static/css/main.50ae65b8.chunk.css",
     "static/js/main.467c47ae.chunk.js"
   ]
 }
