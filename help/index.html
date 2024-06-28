@@ -13,10 +13,10 @@
 
     <!--Github Pages Redirect Code-->
     <script type="text/javascript">
-      var newUrl = new URL(window.location.href);
+      const newUrl = new URL(window.location.href);
       newUrl.searchParams.set("location", newUrl.pathname);
       newUrl.pathname = "/";
-      var redirectTag = document.createElement("meta");
+      const redirectTag = document.createElement("meta");
       redirectTag.httpEquiv = "refresh";
       redirectTag.content = "0.0000000001; url=" + newUrl.href;
       document.head.appendChild(redirectTag);
