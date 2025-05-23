@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import { LanguageProvider } from "@/hooks/use-language";
 import { Toaster } from "@/components/ui/toaster";
-import { UrlHandler } from "@/components/url-handler";
 import { Loader2 } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -52,7 +51,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <LanguageProvider>
             <div className="flex min-h-screen flex-col">{children}</div>
           </LanguageProvider>
-          <UrlHandler />
           <Toaster />
         </Suspense>
       </body>
