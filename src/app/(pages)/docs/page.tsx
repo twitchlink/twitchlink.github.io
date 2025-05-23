@@ -256,7 +256,7 @@ export default function Page() {
 
                   <Accordion type="multiple">
                     <AccordionItem value="faq-1">
-                      <AccordionTrigger>
+                      <AccordionTrigger className="text-left">
                         {T({
                           en: "Why am I seeing security warnings?",
                           ko: "보안 경고가 표시되는 이유는 무엇인가요?",
@@ -270,7 +270,7 @@ export default function Page() {
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="faq-2">
-                      <AccordionTrigger>
+                      <AccordionTrigger className="text-left">
                         {T({
                           en: "Is TwitchLink safe to use?",
                           ko: "TwitchLink는 사용하기에 안전한가요?",
@@ -732,7 +732,7 @@ export default function Page() {
 
                   <Accordion type="multiple">
                     <AccordionItem value="faq-1">
-                      <AccordionTrigger>
+                      <AccordionTrigger className="text-left">
                         {T({
                           en: "Why am I seeing this message?",
                           ko: "이 메시지가 표시되는 이유는 무엇인가요?",
@@ -746,7 +746,7 @@ export default function Page() {
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="faq-2">
-                      <AccordionTrigger>
+                      <AccordionTrigger className="text-left">
                         {T({
                           en: "Is TwitchLink safe for macOS?",
                           ko: "TwitchLink는 macOS에서 사용하기에 안전한가요?",

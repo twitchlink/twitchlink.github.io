@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Heart, Coffee, CreditCard, ExternalLink, Download, Star, GitFork } from "lucide-react";
+import { Heart, Coffee, CreditCard, ExternalLink, Download, Star, GitFork, Wrench } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -122,7 +122,7 @@ export default function Page() {
                 ko: "그냥 다운로드",
               })}
             </DialogTitle>
-            <DialogDescription className="text-base">
+            <DialogDescription className="text-left text-base">
               {T({
                 en: "TwitchLink is an open source project. Your support helps us continue development.",
                 ko: "TwitchLink는 오픈소스 프로젝트입니다. 여러분의 지원이 개발을 지속하는 데 도움이 됩니다.",
@@ -210,13 +210,14 @@ export default function Page() {
       <Dialog open={showMacOsInstallHelpDialog} onOpenChange={setShowMacOsInstallHelpDialog}>
         <DialogContent className="max-w-md">
           <DialogHeader>
-            <DialogTitle>
+            <DialogTitle className="flex items-center gap-2 text-xl">
+              <Wrench className="h-5 w-5" />
               {T({
                 en: "Having Trouble?",
                 ko: "문제가 생겼나요?",
               })}
             </DialogTitle>
-            <DialogDescription>
+            <DialogDescription className="text-left text-base">
               {T({
                 en: "If you encounter the following message, check out how to resolve it.",
                 ko: "다음 오류가 발생하나요? 해결책을 확인해 보세요.",
@@ -247,14 +248,14 @@ export default function Page() {
       <Dialog open={showGitHubVisitDialog} onOpenChange={setShowGitHubVisitDialog}>
         <DialogContent className="max-w-xl">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-2">
+            <DialogTitle className="flex items-center gap-2 text-xl">
               <SiGithub className="h-5 w-5" />
               {T({
                 en: "Join Our GitHub Community",
                 ko: "GitHub 커뮤니티에 참여하세요",
               })}
             </DialogTitle>
-            <DialogDescription>
+            <DialogDescription className="text-left text-base">
               {T({
                 en: "Your support on GitHub helps us grow and improve TwitchLink.",
                 ko: "GitHub에서의 지원은 TwitchLink의 성장과 개선에 도움이 됩니다.",
