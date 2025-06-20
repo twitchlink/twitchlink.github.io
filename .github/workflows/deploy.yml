@@ -47,6 +47,7 @@ jobs:
           echo "NEXT_PUBLIC_DONATE_BUY_ME_A_COFFEE_URL=${{ vars.NEXT_PUBLIC_DONATE_BUY_ME_A_COFFEE_URL }}" >> .env.local
           echo "NEXT_PUBLIC_DONATE_PAYPAL_URL=${{ vars.NEXT_PUBLIC_DONATE_PAYPAL_URL }}" >> .env.local
           echo "NEXT_PUBLIC_DONATE_TOONATION_URL=${{ vars.NEXT_PUBLIC_DONATE_TOONATION_URL }}" >> .env.local
+          echo "NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=${{ vars.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }}" >> .env.local
           echo "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}" >> .env.local
           echo "NEXT_PUBLIC_GOOGLE_ADSENSE_ID=${{ vars.NEXT_PUBLIC_GOOGLE_ADSENSE_ID }}" >> .env.local
 

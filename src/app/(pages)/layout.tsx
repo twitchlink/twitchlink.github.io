@@ -12,7 +12,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ""} />
       {/* End Of Google Analytics */}
       {/* Google AdSense */}
-      <script data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID} async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script
+        data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID || ""}
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      ></script>
       {/* End Of Google AdSense */}
     </>
   );
