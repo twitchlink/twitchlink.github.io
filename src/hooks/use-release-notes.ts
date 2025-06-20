@@ -8,6 +8,35 @@ export const useReleaseNotes = () => {
   const getReleaseNotes = useCallback((): ReleaseNote[] => {
     return [
       {
+        version: "3.5.0",
+        date: new Date("2025-06-19"),
+        binaries: ["windows", "macos"],
+        content: {
+          title: T({
+            en: "Bug Fixes and Improvements",
+            ko: "버그 수정 및 개선 사항",
+          }),
+          items: [
+            T({
+              en: "Due to an update from Twitch, fixed an issue where downloading a replay during a live stream would continue downloading until the live stream ended.",
+              ko: "Twitch의 업데이트로 인해 생방송 중에 다시보기를 다운로드할 때 생방송이 종료될 때까지 다운로드가 계속되던 문제를 수정했습니다.",
+            }),
+            T({
+              en: "Due to an update from Twitch, fixed an issue that caused errors when downloading certain live streams and videos.",
+              ko: "Twitch의 업데이트로 인해 일부 생방송 및 비디오 다운로드에 오류가 발생하던 문제를 수정하였습니다.",
+            }),
+            T({
+              en: "Some bugs were fixed.",
+              ko: "일부 버그가 수정되었습니다.",
+            }),
+            T({
+              en: "Some features were improved.",
+              ko: "일부 기능이 개선되었습니다.",
+            }),
+          ],
+        },
+      },
+      {
         version: "3.4.0",
         date: new Date("2025-04-21"),
         binaries: ["windows", "macos"],
@@ -879,7 +908,7 @@ export const useReleaseNotes = () => {
             {
               text: T({
                 en: "Supports parallel downloads.",
-                ko: "동시에 여러 다운로드를 진행할 수 있습니다..",
+                ko: "동시에 여러 다운로드를 진행할 수 있습니다.",
               }),
               important: true,
             },

@@ -4,12 +4,14 @@ import Link from "next/link";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/hooks/use-language";
+import { useReleaseNotes } from "@/hooks/use-release-notes";
 import { DownloadButton } from "@/components/download-button";
 import Logo from "@/assets/icons/logo.svg";
 import { FeatureCard } from "@/components/feature-card";
 
 export default function Page() {
   const { T } = useLanguage();
+  const { getLatestVersion } = useReleaseNotes();
 
   return (
     <>
@@ -24,7 +26,7 @@ export default function Page() {
                 en: "TwitchLink",
                 ko: "TwitchLink",
               })}{" "}
-              <span className="text-purple-600">3.4.0</span>
+              <span className="text-purple-600">{getLatestVersion()}</span>
             </h1>
             <p className="max-w-[700px] text-muted-foreground md:text-xl">
               {T({

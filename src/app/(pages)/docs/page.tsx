@@ -13,6 +13,7 @@ import { Switch } from "@/components/ui/switch";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useLanguage } from "@/hooks/use-language";
+import { useReleaseNotes } from "@/hooks/use-release-notes";
 import { DownloadButton } from "@/components/download-button";
 import Logo from "@/assets/icons/logo.svg";
 import { usePlatform } from "@/hooks/use-platform";
@@ -55,6 +56,7 @@ export default function Page() {
   const [textOnly, setTextOnly] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const { T } = useLanguage();
+  const { getLatestVersion } = useReleaseNotes();
   const { currentPlatform } = usePlatform();
   const searchParams = useSearchParams();
   const { createRouteHref } = useHref();
@@ -113,7 +115,7 @@ export default function Page() {
               <Logo className="h-9 w-9" />
             </div>
             <h2 className="text-2xl font-bold tracking-tighter">
-              TwitchLink <span className="text-purple-600">3.4.0</span>
+              TwitchLink <span className="text-purple-600">{getLatestVersion()}</span>
             </h2>
             <p className="text-muted-foreground">
               {T({
