@@ -8,6 +8,23 @@ export const useReleaseNotes = () => {
   const getReleaseNotes = useCallback((): ReleaseNote[] => {
     return [
       {
+        version: "3.5.1",
+        date: new Date("2025-06-20"),
+        binaries: ["windows", "macos"],
+        content: {
+          title: T({
+            en: "Bug Fixes",
+            ko: "버그 수정",
+          }),
+          items: [
+            T({
+              en: "Fixed an issue where the 'Update Track' feature did not work correctly.",
+              ko: "'업데이트 추적' 모드가 올바르게 동작하지 않던 문제를 수정하였습니다.",
+            }),
+          ],
+        },
+      },
+      {
         version: "3.5.0",
         date: new Date("2025-06-19"),
         binaries: ["windows", "macos"],
