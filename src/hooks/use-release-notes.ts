@@ -8,6 +8,31 @@ export const useReleaseNotes = () => {
   const getReleaseNotes = useCallback((): ReleaseNote[] => {
     return [
       {
+        version: "3.5.2",
+        date: new Date("2025-08-04"),
+        binaries: ["windows", "macos"],
+        content: {
+          title: T({
+            en: "Bug Fixes and Improvements",
+            ko: "버그 수정 및 개선 사항",
+          }),
+          items: [
+            T({
+              en: "Fixed an issue where some video quality options were not loaded.",
+              ko: "일부 화질 옵션을 올바르게 불러오지 못하는 문제를 해결하였습니다.",
+            }),
+            T({
+              en: "Some bugs were fixed.",
+              ko: "일부 버그가 수정되었습니다.",
+            }),
+            T({
+              en: "Some features were improved.",
+              ko: "일부 기능이 개선되었습니다.",
+            }),
+          ],
+        },
+      },
+      {
         version: "3.5.1",
         date: new Date("2025-06-20"),
         binaries: ["windows", "macos"],
