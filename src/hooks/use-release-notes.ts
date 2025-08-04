@@ -18,8 +18,8 @@ export const useReleaseNotes = () => {
           }),
           items: [
             T({
-              en: "Fixed an issue where some video quality options were not loaded.",
-              ko: "일부 화질 옵션을 올바르게 불러오지 못하는 문제를 해결하였습니다.",
+              en: "Video quality options for enhanced broadcasting are now supported.",
+              ko: "이제 Enhanced broadcasting의 화질 옵션을 지원합니다.",
             }),
             T({
               en: "Some bugs were fixed.",
