@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { Monitor, AlertTriangle, Info, ExternalLink, ArrowUp } from "lucide-react";
+import { AlertTriangle, Info, ExternalLink, ArrowUp } from "lucide-react";
+import { BsMicrosoft } from "react-icons/bs";
 import { SiApple, SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -138,7 +139,7 @@ export default function Page() {
           <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as PlatformType)} className="w-full">
             <TabsList className="mb-8 grid w-full grid-cols-2">
               <TabsTrigger value="windows" className="flex items-center gap-2">
-                <Monitor className="h-4 w-4" />
+                <BsMicrosoft className="h-4 w-4" />
                 {T({
                   en: "Help for Windows",
                   ko: "Windows용 도움말",
@@ -157,7 +158,7 @@ export default function Page() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-2">
-                    <Monitor className="h-5 w-5" />
+                    <BsMicrosoft className="h-5 w-5" />
                     <CardTitle>
                       {T({
                         en: "Install TwitchLink for Windows",
@@ -292,7 +293,7 @@ export default function Page() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-2">
-                    <Monitor className="h-5 w-5" />
+                    <BsMicrosoft className="h-5 w-5" />
                     <CardTitle>
                       {T({
                         en: "Stream Download",
@@ -379,7 +380,7 @@ export default function Page() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-2">
-                    <Monitor className="h-5 w-5" />
+                    <BsMicrosoft className="h-5 w-5" />
                     <CardTitle>
                       {T({
                         en: "Video Download",
@@ -494,7 +495,7 @@ export default function Page() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-2">
-                    <Monitor className="h-5 w-5" />
+                    <BsMicrosoft className="h-5 w-5" />
                     <CardTitle>
                       {T({
                         en: "Clip Download",

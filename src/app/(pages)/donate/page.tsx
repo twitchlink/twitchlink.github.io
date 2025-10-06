@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { sendGAEvent } from "@next/third-parties/google";
 import { Heart, Coffee, CreditCard, ExternalLink, Download, Star, GitFork, Wrench } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
@@ -9,8 +11,7 @@ import { useLanguage } from "@/hooks/use-language";
 import { useState, useCallback, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
-import Image from "next/image";
-import MacosInstallHelpImage from "@/assets/img/pages/donate/macos-install-help.png";
+import MacOSInstallHelpImage from "@/assets/img/pages/donate/macos-install-help.png";
 import type { PlatformType, ReleaseBinaryInfo } from "@/types";
 import { useReleaseNotes } from "@/hooks/use-release-notes";
 import { useHref } from "@/hooks/use-href";
@@ -40,18 +41,25 @@ export default function Page() {
   const [isLoadingRepositoryInfo, setIsLoadingRepositoryInfo] = useState(true);
   const [showJustDownloadDialog, setShowJustDownloadDialog] = useState(false);
   const [showGitHubVisitDialog, setShowGitHubVisitDialog] = useState(false);
-  const [showMacOsInstallHelpDialog, setShowMacOsInstallHelpDialog] = useState(false);
+  const [showMacOSInstallHelpDialog, setShowMacOSInstallHelpDialog] = useState(false);
 
   const downloadFile = useCallback(() => {
-    const versionCheck = downloadRequested?.version.split(".") || [];
+    if (downloadRequested === null) {
+      return;
+    }
+    const versionCheck = downloadRequested.version.split(".") || [];
     let fileName = "";
     if (versionCheck.length === 3 && versionCheck[0] === "1" && versionCheck[1] === "0") {
-      fileName = `TwitchLink-${downloadRequested?.version}.exe`;
+      fileName = `TwitchLink-${downloadRequested.version}.exe`;
     } else {
-      fileName = `TwitchLinkSetup-${downloadRequested?.version}.${downloadRequested?.platform === "macos" ? "dmg" : "exe"}`;
+      fileName = `TwitchLinkSetup-${downloadRequested.version}.${downloadRequested.platform === "macos" ? "dmg" : "exe"}`;
     }
-    const downloadUrl = `${process.env.NEXT_PUBLIC_GITHUB_RELEASE_DOWNLOAD_URL}/${downloadRequested?.version}/${fileName}`;
+    const downloadUrl = `${process.env.NEXT_PUBLIC_GITHUB_RELEASE_DOWNLOAD_URL}/${downloadRequested.version}/${fileName}`;
     window.open(downloadUrl, "_self");
+    sendGAEvent("event", "file_download", {
+      version: downloadRequested.version,
+      platform: downloadRequested.platform,
+    });
   }, [downloadRequested]);
 
   const startDownload = useCallback(() => {
@@ -64,7 +72,7 @@ export default function Page() {
     setTimeout(() => {
       downloadFile();
       if (downloadRequested?.platform === "macos") {
-        setShowMacOsInstallHelpDialog(true);
+        setShowMacOSInstallHelpDialog(true);
       } else {
         setShowGitHubVisitDialog(true);
       }
@@ -207,7 +215,7 @@ export default function Page() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-      <Dialog open={showMacOsInstallHelpDialog} onOpenChange={setShowMacOsInstallHelpDialog}>
+      <Dialog open={showMacOSInstallHelpDialog} onOpenChange={setShowMacOSInstallHelpDialog}>
         <DialogContent className="max-w-md">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-xl">
@@ -224,7 +232,7 @@ export default function Page() {
               })}
             </DialogDescription>
           </DialogHeader>
-          <Image src={MacosInstallHelpImage} alt="macOS Installation Help" />
+          <Image src={MacOSInstallHelpImage} alt="macOS Installation Help" />
           <DialogFooter className="flex-col gap-2">
             <Button asChild>
               <Link href={createRouteHref("/docs", { platform: "macos" })} target="_blank">

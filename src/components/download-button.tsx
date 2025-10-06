@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useCallback, useRef, useMemo, HTMLAttributeAnchorTarget } from "react";
 import Link from "next/link";
-import { Monitor, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { BsMicrosoft } from "react-icons/bs";
 import { SiApple } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/hooks/use-language";
@@ -67,7 +68,7 @@ export function DownloadButton({
     (downloadPlatform: PlatformType) => {
       switch (downloadPlatform) {
         case "windows":
-          return <Monitor className={size === "sm" ? "mr-2 h-4 w-4" : "mr-2 h-5 w-5"} />;
+          return <BsMicrosoft className={size === "sm" ? "mr-2 h-4 w-4" : "mr-2 h-5 w-5"} />;
         case "macos":
           return <SiApple className={size === "sm" ? "mr-2 h-4 w-4" : "mr-2 h-5 w-5"} />;
         default:
@@ -141,7 +142,7 @@ export function DownloadButton({
                 target={target}
                 className="flex w-full items-center px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
               >
-                {platform === "windows" && <Monitor className="mr-2 h-4 w-4" />}
+                {platform === "windows" && <BsMicrosoft className="mr-2 h-4 w-4" />}
                 {platform === "macos" && <SiApple className="mr-2 h-4 w-4" />}
                 {T({
                   en: `Download for ${getPlatformDisplayName(platform)}`,
