@@ -1,12 +1,37 @@
 import { useCallback, useMemo } from "react";
 import { useLanguage } from "@/hooks/use-language";
-import { type PlatformType, type ReleaseNote } from "@/types/types";
+import type { PlatformType, ReleaseNote } from "@/types";
 
 export const useReleaseNotes = () => {
   const { T } = useLanguage();
 
   const getReleaseNotes = useCallback((): ReleaseNote[] => {
     return [
+      {
+        version: "3.5.3",
+        date: new Date("2025-10-05"),
+        binaries: ["windows", "macos"],
+        content: {
+          title: T({
+            en: "Bug Fixes and Improvements",
+            ko: "버그 수정 및 개선 사항",
+          }),
+          items: [
+            T({
+              en: "Resolved an issue where the login feature was incompatible due to internal changes of Twitch.",
+              ko: "Twitch 내부 변경사항으로 인해 로그인 기능이 호환되지 않던 문제를 해결하였습니다.",
+            }),
+            T({
+              en: "Some bugs were fixed.",
+              ko: "일부 버그가 수정되었습니다.",
+            }),
+            T({
+              en: "Some features were improved.",
+              ko: "일부 기능이 개선되었습니다.",
+            }),
+          ],
+        },
+      },
       {
         version: "3.5.2",
         date: new Date("2025-08-04"),

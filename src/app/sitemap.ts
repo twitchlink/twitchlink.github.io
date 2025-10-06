@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { RouteList } from "@/types/types";
+import type { RouteList } from "@/types";
 
 export const dynamic = "force-static"; // Static generation for GitHub Pages
 

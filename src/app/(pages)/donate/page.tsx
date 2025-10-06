@@ -11,7 +11,7 @@ import { useSearchParams } from "next/navigation";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import Image from "next/image";
 import MacosInstallHelpImage from "@/assets/img/pages/donate/macos-install-help.png";
-import { type PlatformType, type ReleaseBinaryInfo } from "@/types/types";
+import type { PlatformType, ReleaseBinaryInfo } from "@/types";
 import { useReleaseNotes } from "@/hooks/use-release-notes";
 import { useHref } from "@/hooks/use-href";
 

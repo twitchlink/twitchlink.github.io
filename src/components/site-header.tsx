@@ -9,7 +9,7 @@ import { MobileNav } from "@/components/mobile-nav";
 import { useLanguage } from "@/hooks/use-language";
 import { useHref } from "@/hooks/use-href";
 import Logo from "@/assets/icons/logo.svg";
-import { RouteList } from "@/types/types";
+import type { RouteList } from "@/types";
 export function SiteHeader() {
   const { language, setLanguage, getSupportedLanguages, getLanguageDisplayName, T } = useLanguage();
   const pathname = usePathname();

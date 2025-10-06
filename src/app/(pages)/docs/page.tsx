@@ -18,7 +18,7 @@ import { DownloadButton } from "@/components/download-button";
 import Logo from "@/assets/icons/logo.svg";
 import { usePlatform } from "@/hooks/use-platform";
 import { useHref } from "@/hooks/use-href";
-import { type PlatformType } from "@/types/types";
+import type { PlatformType } from "@/types";
 
 import Image from "next/image";
 

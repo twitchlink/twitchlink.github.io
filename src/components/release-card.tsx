@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useLanguage } from "@/hooks/use-language";
-import { type ReleaseNote } from "@/types/types";
+import type { ReleaseNote } from "@/types";
 import { DownloadButton } from "@/components/download-button";
 import { useToast } from "@/hooks/use-toast";
 

@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef, HTMLAttributeAnchorTarget } from "react";
+import { useState, useEffect, useCallback, useRef, useMemo, HTMLAttributeAnchorTarget } from "react";
 import Link from "next/link";
 import { Monitor, ChevronDown } from "lucide-react";
 import { SiApple } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/hooks/use-language";
 import { usePlatform } from "@/hooks/use-platform";
-import { type PlatformType } from "@/types/types";
+import type { PlatformType } from "@/types";
 import { useReleaseNotes } from "@/hooks/use-release-notes";
 import { useHref } from "@/hooks/use-href";
 
@@ -36,7 +36,10 @@ export function DownloadButton({
   const { createRouteHref } = useHref();
   const { getLatestVersion } = useReleaseNotes();
   const { currentPlatform, getPlatformDisplayName } = usePlatform();
-  const [platforms, setPlatforms] = useState<PlatformType[]>(() => {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const platforms = useMemo(() => {
     const items: PlatformType[] = binaries.length === 0 ? ["windows", "macos"] : [...binaries];
     const current = currentPlatform as PlatformType;
     const index = items.indexOf(current);
@@ -45,9 +48,7 @@ export function DownloadButton({
       items.unshift(current);
     }
     return items;
-  });
-  const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
+  }, [binaries, currentPlatform]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {

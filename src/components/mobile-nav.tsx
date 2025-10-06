@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useLanguage } from "@/hooks/use-language";
 import { useHref } from "@/hooks/use-href";
-import { RouteList } from "@/types/types";
+import type { RouteList } from "@/types";
 import Logo from "@/assets/icons/logo.svg";
 
 export function MobileNav() {

@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLanguage } from "./use-language";
-import { RouteList } from "@/types/types";
+import type { RouteList } from "@/types";
 
 export function useHref() {
   const searchParams = useSearchParams();

@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from "react";
-import { type PlatformType } from "@/types/types";
+import type { PlatformType } from "@/types";
 
 export function usePlatform() {
   const detectPlatform = useCallback((): PlatformType | null => {

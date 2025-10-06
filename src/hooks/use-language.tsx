@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
-import { type LanguageType } from "@/types/types";
+import type { LanguageType } from "@/types";
 import { useRouter, useSearchParams } from "next/navigation";
 
 type LanguageContextType = {
