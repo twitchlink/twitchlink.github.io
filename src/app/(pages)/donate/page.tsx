@@ -434,6 +434,39 @@ export default function Page() {
             </div>
           )}
 
+          {downloadRequested && !downloadStarted ? (
+            <Card className="mt-8">
+              <CardHeader>
+                <CardTitle>
+                  {T({
+                    en: "Download without donating",
+                    ko: "후원 없이 다운로드",
+                  })}
+                </CardTitle>
+                <CardDescription>
+                  {T({
+                    en: "If you prefer not to donate at this time, you can proceed directly to the download.",
+                    ko: "후원을 원하지 않으시면 바로 다운로드하실 수 있습니다.",
+                  })}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => setShowJustDownloadDialog(true)}
+                  className="w-full max-w-full overflow-hidden truncate whitespace-nowrap"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  {T({
+                    en: "Just start my download",
+                    ko: "그냥 다운로드",
+                  })}
+                </Button>
+              </CardContent>
+            </Card>
+          ) : null}
+
           <div className={"grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"}>
             <Card className="flex flex-col">
               <CardHeader>
@@ -617,39 +650,6 @@ export default function Page() {
               </p>
             </CardFooter>
           </Card>
-
-          {downloadRequested && !downloadStarted ? (
-            <Card className="mt-8">
-              <CardHeader>
-                <CardTitle>
-                  {T({
-                    en: "Download without donating",
-                    ko: "후원 없이 다운로드",
-                  })}
-                </CardTitle>
-                <CardDescription>
-                  {T({
-                    en: "If you prefer not to donate at this time, you can proceed directly to the download.",
-                    ko: "후원을 원하지 않으시면 바로 다운로드하실 수 있습니다.",
-                  })}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => setShowJustDownloadDialog(true)}
-                  className="w-full max-w-full overflow-hidden truncate whitespace-nowrap"
-                >
-                  <Download className="mr-2 h-4 w-4" />
-                  {T({
-                    en: "No thanks, just start my download.",
-                    ko: "그냥 다운로드",
-                  })}
-                </Button>
-              </CardContent>
-            </Card>
-          ) : null}
         </div>
       </div>
     </div>
