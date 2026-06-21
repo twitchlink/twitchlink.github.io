@@ -8,6 +8,27 @@ export const useReleaseNotes = () => {
   const getReleaseNotes = useCallback((): ReleaseNote[] => {
     return [
       {
+        version: "3.5.5",
+        date: new Date("2026-06-21"),
+        binaries: ["windows", "macos"],
+        content: {
+          title: T({
+            en: "Bug Fixes",
+            ko: "버그 수정",
+          }),
+          items: [
+            T({
+              en: "Resolved an issue where some features were not working due to internal changes on Twitch.",
+              ko: "Twitch 내부 변경사항으로 인해 일부 기능이 동작하지 않던 문제를 해결하였습니다.",
+            }),
+            T({
+              en: "Some bugs were fixed.",
+              ko: "일부 버그가 수정되었습니다.",
+            }),
+          ],
+        },
+      },
+      {
         version: "3.5.4",
         date: new Date("2025-11-10"),
         binaries: ["windows", "macos"],
